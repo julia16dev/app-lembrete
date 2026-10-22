@@ -1,18 +1,38 @@
-# app-lembrete
-#Projeto lembrete
+codigo reformulado
+---------------------------------------------
 
 import customtkinter
+import os
+from  PIL import Image
 
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("blue")
 
 janela = customtkinter.CTk()
-janela.title("Meus Lembretes")
+janela.title("Milembri")
 janela.geometry("800x850")
+pasta = os.path.dirname(os.path.abspath(__file__))
+janela.iconbitmap(os.path.join(pasta, "azul.ico"))
+
+Logodabunda = customtkinter.CTkImage(light_image=Image.open(os.path.join(pasta,"Logotipolaranja.png")), dark_image=Image.open(os.path.join(pasta,"Logotipoazul.png")), size= (300,75))
+
+labeldalogo = customtkinter.CTkLabel(janela, text="", image=Logodabunda)
+labeldalogo.pack(anchor="w",padx=20,pady=(15, 5))
 
 tamanho_letra = 26
 limite = 6
 textos_dos_lembretes = []
+
+def atualizar_icone():
+    tema_atual = customtkinter.get_appearance_mode()
+
+    if tema_atual == "Dark":
+        arquivo = "azul.ico"
+    else:
+        arquivo = "laranja.ico"
+
+    caminho = os.path.join(pasta, arquivo)
+    janela.iconbitmap(caminho)
 
 def atualizar_contador():
     quantidade = len(textos_dos_lembretes)
@@ -157,6 +177,7 @@ def trocar_tema():
     else:
         customtkinter.set_appearance_mode("dark")
         btn_tema.configure(text="Modo claro")
+    atualizar_icone()
 
 frame_barra = customtkinter.CTkFrame(
     master=janela
