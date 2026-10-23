@@ -1,4 +1,5 @@
-codigo reformulado
+código reformulado
+
 ---------------------------------------------
 
 import customtkinter
@@ -318,3 +319,6 @@ contador = customtkinter.CTkLabel(
 contador.pack(pady=5)
 
 janela.mainloop()
+
+![image alt](IMG-20261022-WA0006.jpg)
+![image alt](IMG-20261022-WA0005.jpg)
