@@ -1,10 +1,27 @@
-código reformulado
+# Milembri
+App para colocar lembretes, melhorar a organização e ajudar pessoas com problema de memória.
 
----------------------------------------------
 
+![](print.png)<img width="792" height="876" alt="WhatsApp Image 2026-10-22 at 16 24 43 (1)" src="https://github.com/user-attachments/assets/b813cc90-b262-4822-8933-bc62e5966ae3" />
+
+
+
+## Equipe · Empresa FanTan
+
+**Programadores:** Emanuelle Nunes e Júlia Lourenço
+
+**Designers:** Bárbara e Davi Cavalcante
+
+**Product Owners:** Ana Júlia Rodrigues Dantas
+
+## 
+## Código
 import customtkinter
+
 import os
+
 from  PIL import Image
+
 
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("blue")
@@ -15,9 +32,9 @@ janela.geometry("800x850")
 pasta = os.path.dirname(os.path.abspath(__file__))
 janela.iconbitmap(os.path.join(pasta, "azul.ico"))
 
-Logodabunda = customtkinter.CTkImage(light_image=Image.open(os.path.join(pasta,"Logotipolaranja.png")), dark_image=Image.open(os.path.join(pasta,"Logotipoazul.png")), size= (300,75))
+Logo = customtkinter.CTkImage(light_image=Image.open(os.path.join(pasta,"Logotipolaranja.png")), dark_image=Image.open(os.path.join(pasta,"Logotipoazul.png")), size= (300,75))
 
-labeldalogo = customtkinter.CTkLabel(janela, text="", image=Logodabunda)
+labeldalogo = customtkinter.CTkLabel(janela, text="", image=Logo)
 labeldalogo.pack(anchor="w",padx=20,pady=(15, 5))
 
 tamanho_letra = 26
@@ -319,6 +336,3 @@ contador = customtkinter.CTkLabel(
 contador.pack(pady=5)
 
 janela.mainloop()
-
-![image alt](IMG-20261022-WA0006.jpg)
-![image alt](IMG-20261022-WA0005.jpg)
